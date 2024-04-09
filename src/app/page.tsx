@@ -23,12 +23,13 @@ const homeQuery = groq`
 export const metadata: Metadata = {
   title: 'Rafael Derolez - Frontend Developer',
   description:
-    'Rafael Derolez is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
+    'Raf is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
   twitter: {
+    card: 'summary_large_image',
     site: '@rafaelderolez',
     creator: '@rafaelderolez',
     description:
-      'Rafael Derolez is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
+      'Raf is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
     title: 'Rafael Derolez - Frontend Developer',
   },
 }
