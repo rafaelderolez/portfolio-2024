@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { type Project as SanityProject } from '@/types/sanity'
 import { FC } from 'react'
 import {
@@ -35,12 +36,12 @@ export const Project: FC<SanityProject> = ({
   body,
   link,
 }) => {
-  console.log('LS -> src/components/Project.tsx:32 -> media: ', media)
   return (
     <Drawer shouldScaleBackground={true}>
       <DrawerTrigger asChild>
         <div className="group flex cursor-pointer gap-2">
-          <img
+          <Image
+            alt={`${title} logo`}
             src={urlForImage(logo).url()}
             width={48}
             height={48}
@@ -75,7 +76,8 @@ export const Project: FC<SanityProject> = ({
             </Button>
           </DrawerClose>
           <div className="flex items-center gap-4 px-4 pt-2 md:px-8">
-            <img
+            <Image
+              alt={`${title} logo`}
               src={urlForImage(logo).url()}
               width={64}
               height={64}
