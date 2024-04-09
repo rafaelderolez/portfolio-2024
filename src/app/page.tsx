@@ -32,6 +32,9 @@ export const metadata: Metadata = {
       'Raf is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
     title: 'Rafael Derolez - Frontend Developer',
   },
+  openGraph: {
+    url: 'https://derolez.dev',
+  },
 }
 
 export default async function Home() {
