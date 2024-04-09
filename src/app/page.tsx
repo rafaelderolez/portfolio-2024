@@ -3,6 +3,7 @@ import { Intro } from '@/components/Intro'
 import { Project } from '@/components/Project'
 import { client } from '@/lib/sanity'
 import { HomeQueryResult, type Home } from '@/types/sanity'
+import { Metadata } from 'next'
 
 const homeQuery = groq`
 *[_id == "home"]{
@@ -18,6 +19,19 @@ const homeQuery = groq`
   }
 }[0]
 `
+
+export const metadata: Metadata = {
+  title: 'Rafael Derolez - Frontend Developer',
+  description:
+    'Rafael Derolez is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
+  twitter: {
+    site: '@rafaelderolez',
+    creator: '@rafaelderolez',
+    description:
+      'Rafael Derolez is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
+    title: 'Rafael Derolez - Frontend Developer',
+  },
+}
 
 export default async function Home() {
   const home = await client.fetch<HomeQueryResult>(homeQuery)
