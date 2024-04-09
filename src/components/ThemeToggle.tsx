@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { CheckIcon, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 import { Button } from '@/components/ui/button'
@@ -14,7 +14,7 @@ import {
 import { useEffect, useState } from 'react'
 
 export const ThemeToggle = () => {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   // useEffect only runs on the client, so now we can safely show the UI
@@ -38,12 +38,15 @@ export const ThemeToggle = () => {
       <DropdownMenuContent align="start">
         <DropdownMenuItem onClick={() => setTheme('light')}>
           Light
+          {theme === 'light' && <CheckIcon className="ml-auto h-4 w-4" />}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
           Dark
+          {theme === 'dark' && <CheckIcon className="ml-auto h-4 w-4" />}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
           System
+          {theme === 'system' && <CheckIcon className="ml-auto h-4 w-4" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
