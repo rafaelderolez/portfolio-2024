@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { type Project as SanityProject } from '@/types/sanity'
 import { FC } from 'react'
 import {
@@ -39,7 +38,7 @@ export const Project: FC<SanityProject> = ({
   return (
     <Drawer shouldScaleBackground={true}>
       <div className="group flex cursor-pointer gap-2">
-        <Image
+        <img
           alt={`${title} logo`}
           src={urlForImage(logo).url()}
           width={48}
@@ -75,7 +74,7 @@ export const Project: FC<SanityProject> = ({
             </Button>
           </DrawerClose>
           <div className="flex items-center gap-4 px-4 pt-2 md:px-8">
-            <Image
+            <img
               alt={`${title} logo`}
               src={urlForImage(logo).url()}
               width={64}
@@ -124,7 +123,7 @@ export const Project: FC<SanityProject> = ({
                       data-vaul-no-drag
                       sizes="(min-width: 1024px) 793px, 83vw"
                       width={793}
-                      className="rounded-xl border border-muted-foreground/20"
+                      className="rounded-xl border border-muted-foreground/20 data-[loading]:top-0"
                     />
                   </CarouselItem>
                 ) : null,
