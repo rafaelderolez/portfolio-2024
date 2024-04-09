@@ -110,22 +110,24 @@ export const Project: FC<SanityProject> = ({
 
           <Carousel data-vaul-no-drag>
             <CarouselContent className="-ml-4 mt-6 px-4 md:-ml-8 md:px-8">
-              {media?.map((m) => (
-                <CarouselItem
-                  key={m._key}
-                  className="basis-10/12 pl-4 last:mr-4 md:pl-8 md:last:mr-8"
-                  data-vaul-no-drag
-                >
-                  <SanityImage
-                    id={m.asset?._id}
-                    preview={m.asset?.metadata.lqip}
+              {media?.map((m, i) =>
+                m.asset ? (
+                  <CarouselItem
+                    key={i}
+                    className="basis-10/12 pl-4 last:mr-4 md:pl-8 md:last:mr-8"
                     data-vaul-no-drag
-                    sizes="(min-width: 1024px) 793px, 83vw"
-                    width={793}
-                    className="rounded-xl border border-muted-foreground/20"
-                  />
-                </CarouselItem>
-              ))}
+                  >
+                    <SanityImage
+                      id={m.asset?._id}
+                      preview={m.asset?.metadata?.lqip ?? undefined}
+                      data-vaul-no-drag
+                      sizes="(min-width: 1024px) 793px, 83vw"
+                      width={793}
+                      className="rounded-xl border border-muted-foreground/20"
+                    />
+                  </CarouselItem>
+                ) : null,
+              )}
             </CarouselContent>
             <CarouselPrevious className="left-6 hidden transition-opacity disabled:opacity-0 md:flex" />
             <CarouselNext className="right-6 hidden transition-opacity disabled:opacity-0 md:flex" />

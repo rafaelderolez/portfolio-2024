@@ -96,13 +96,9 @@ export type Project = {
     asset: {
       _id: string
       metadata: {
-        lqip: string
-      }
-    }
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-    _key: string
+        lqip: string | null
+      } | null
+    } | null
   }>
 }
 
