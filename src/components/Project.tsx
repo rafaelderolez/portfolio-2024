@@ -38,33 +38,32 @@ export const Project: FC<SanityProject> = ({
 }) => {
   return (
     <Drawer shouldScaleBackground={true}>
-      <DrawerTrigger asChild>
-        <div className="group flex cursor-pointer gap-2">
-          <Image
-            alt={`${title} logo`}
-            src={urlForImage(logo).url()}
-            width={48}
-            height={48}
-            className="h-12 w-12 rounded-xl border border-muted-foreground/20"
-          />
-          <div className="mr-4">
-            <h2 className="text-base font-medium leading-snug">{title}</h2>
-            <span className="block text-xs leading-tight text-muted-foreground">
-              {strapline}
-            </span>
-          </div>
+      <div className="group flex cursor-pointer gap-2">
+        <Image
+          alt={`${title} logo`}
+          src={urlForImage(logo).url()}
+          width={48}
+          height={48}
+          className="h-12 w-12 rounded-xl border border-muted-foreground/20"
+        />
+        <div className="mr-4">
+          <h2 className="text-base font-medium leading-snug">{title}</h2>
+          <span className="block text-xs leading-tight text-muted-foreground">
+            {strapline}
+          </span>
+        </div>
+        <DrawerTrigger asChild>
           <button
-            tabIndex={0}
             aria-label={`View ${title}`}
             className={cn(
               badgeVariants({ variant: 'default' }),
-              'ml-auto self-center',
+              'ml-auto self-center after:absolute after:inset-0 after:content-[""]',
             )}
           >
             View
           </button>
-        </div>
-      </DrawerTrigger>
+        </DrawerTrigger>
+      </div>
       <DrawerContent>
         <ScrollArea className="h-[calc(100dvh-6rem)]">
           <DrawerClose
