@@ -80,7 +80,6 @@ export const Project: FC<SanityProject> = ({
               width={64}
               height={64}
               className="h-20 w-20 rounded-2xl border border-muted-foreground/20"
-              data-vau-no-drag
             />
             <div className="flex max-w-96 flex-col gap-1">
               <DrawerTitle className="text-2xl font-medium leading-none">
@@ -109,12 +108,13 @@ export const Project: FC<SanityProject> = ({
             </div>
           </div>
 
-          <Carousel>
+          <Carousel data-vaul-no-drag>
             <CarouselContent className="-ml-4 mt-6 px-4 md:-ml-8 md:px-8">
               {media?.map((m) => (
                 <CarouselItem
                   key={m._key}
                   className="basis-10/12 pl-4 last:mr-4 md:pl-8 md:last:mr-8"
+                  data-vaul-no-drag
                 >
                   <SanityImage
                     id={m.asset?._id}
@@ -127,8 +127,8 @@ export const Project: FC<SanityProject> = ({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {/* <CarouselPrevious /> */}
-            {/* <CarouselNext /> */}
+            <CarouselPrevious className="left-6 hidden transition-opacity disabled:opacity-0 md:flex" />
+            <CarouselNext className="right-6 hidden transition-opacity disabled:opacity-0 md:flex" />
           </Carousel>
           <div className="mt-4 max-w-prose px-4 pb-16 md:px-8">
             <p className="whitespace-pre-wrap text-lg font-light">{body}</p>

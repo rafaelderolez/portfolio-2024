@@ -17,18 +17,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <body className={inter.className}>
+      <head />
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div vaul-drawer-wrapper="" className="bg-background">
             {children}
           </div>
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
