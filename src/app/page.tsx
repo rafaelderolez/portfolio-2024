@@ -21,7 +21,7 @@ const homeQuery = groq`
 `
 
 export const metadata: Metadata = {
-  title: 'Rafael Derolez - Frontend Developer',
+  title: 'Rafael Derolez - Frontend Engineer',
   description:
     'Raf is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
   twitter: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     creator: '@rafaelderolez',
     description:
       'Raf is a freelance front-end engineer with a strong focus on interfaces and experiences working remotely from Ghent, Belgium.',
-    title: 'Rafael Derolez - Frontend Developer',
+    title: 'Rafael Derolez - Frontend Engineer',
   },
   openGraph: {
     url: 'https://derolez.dev',
